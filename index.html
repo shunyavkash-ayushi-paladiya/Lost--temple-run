@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lost Temple: Shadow Run</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div id="vignette"></div><div id="flash"></div>
+  <div id="hud" class="hidden">
+    <div class="hud-left"><span id="health">♥ ♥ ♥</span><span id="guardianMeter"></span></div>
+    <div class="hud-center"><div class="label">SCORE</div><strong id="score">0</strong><div id="distance">0 m</div><div id="multiplier">×1 combo</div></div>
+    <div class="hud-right"><div>✦ <b id="coins">0</b></div><small>BEST <span id="best">0</span></small><button id="mute" aria-label="mute">🔊</button></div>
+    <div id="powerups"></div><div id="dash"><span>SHADOW DASH</span><i><b></b></i><small>E</small></div>
+    <div id="message"></div><div id="hint">A/D or ←/→: lanes &nbsp; W: jump &nbsp; S: slide &nbsp; SHIFT: sprint &nbsp; E: dash &nbsp; ESC: pause</div>
+  </div>
+  <section id="menu" class="screen">
+    <div class="menu-card"><div class="eyebrow">AN ORIGINAL WEBGL ADVENTURE</div><h1>LOST TEMPLE<br><em>SHADOW RUN</em></h1><p>Run beyond the ruins.</p>
+      <button class="primary" id="start">START RUN</button><button id="how">HOW TO PLAY</button><button id="settings">SETTINGS</button><button id="exit">EXIT</button>
+      <div id="howPanel" class="panel hidden">Choose lanes with <b>A / D</b>, leap with <b>W</b>, and duck beneath hazards with <b>S</b>. Hold <b>SHIFT</b> to sprint. Charge and release <b>Shadow Dash (E)</b> to become untouchable. At glowing forks, choose the marked direction.</div>
+      <div id="settingsPanel" class="panel hidden"><label>Graphics <select id="quality"><option value="1">Cinematic</option><option value="0">Performance</option></select></label><label><input id="sound" type="checkbox" checked> Procedural sound</label></div>
+    </div>
+  </section>
+  <section id="pause" class="screen hidden"><div class="menu-card compact"><div class="eyebrow">THE RUINS WAIT</div><h2>GAME PAUSED</h2><button class="primary" id="resume">RESUME</button><button id="pauseRestart">RESTART</button><button id="pauseMenu">MAIN MENU</button></div></section>
+  <section id="over" class="screen hidden"><div class="menu-card compact"><div class="eyebrow">THE SHADOWS CLOSE IN</div><h2>RUN ENDED</h2><div class="results"><span>Score <b id="endScore">0</b></span><span>Distance <b id="endDistance">0 m</b></span><span>Coins <b id="endCoins">0</b></span><span>Best <b id="endBest">0</b></span></div><button class="primary" id="again">TRY AGAIN</button><button id="overMenu">MAIN MENU</button></div></section>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js"></script><script src="game.js"></script>
+</body></html>
